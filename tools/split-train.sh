@@ -29,7 +29,7 @@ cut -f 2,3 $TRAIN_SPLIT_DIR/task-1/task1.train-train.txt \
 echo Preparing the data for Tasks 2 and 3
 mkdir -p $TRAIN_SPLIT_DIR/tasks-2-3 || exit 6
 cp -r $DATA_DIR/tasks-2-3/train $TRAIN_SPLIT_DIR/tasks-2-3/train-train || exit 7
-# cp $DATA_DIR/tasks-2-3/train-labels-FLC/* $TRAIN_SPLIT_DIR/tasks-2-3/train-train/ || exit 7
+#cp $DATA_DIR/datasets/train-labels-FLC/* $TRAIN_SPLIT_DIR/tasks-2-3/train-train/ || exit 7
 
 mkdir $TRAIN_SPLIT_DIR/tasks-2-3/train-dev || exit 8
 cd $TRAIN_SPLIT_DIR/tasks-2-3/train-train || exit 9
@@ -39,4 +39,3 @@ cat *.task2.labels > ../train-dev.task2.labels || exit 12
 cat *.task3.labels > ../train-dev.task3.labels || exit 13
 cd ../../.. || exit 14
 cp $DATA_DIR/tasks-2-3/propaganda-techniques-names.txt $TRAIN_SPLIT_DIR/tasks-2-3/propaganda-techniques-names.txt || exit 15
-
